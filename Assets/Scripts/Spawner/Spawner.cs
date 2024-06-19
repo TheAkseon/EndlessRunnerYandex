@@ -18,6 +18,8 @@ public class Spawner : ObjectPool
     {
         _elapsedTime += Time.deltaTime;
 
+        _secondsBeetwenSpawn = Random.Range(1.5f, 3f);
+
         if(_elapsedTime >= _secondsBeetwenSpawn)
         {
             if(TryGetObject(out GameObject enemy))

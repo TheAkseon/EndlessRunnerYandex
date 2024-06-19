@@ -5,9 +5,9 @@ using UnityEngine.Events;
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
-    [SerializeField] private TextMeshProUGUI _maxScoreText;
+    [SerializeField] private TextMeshProUGUI _maxScoreIndex;
 
-    private int _score = 1;
+    public int _score = 1;
     private int _maxScore = 0;
     private float _timer = 0;
 
@@ -16,7 +16,7 @@ public class ScoreCounter : MonoBehaviour
     private void Start()
     {
         _scoreText.text = _score.ToString();
-        _maxScoreText.text = "Рекорд: " + _maxScore.ToString();
+        _maxScoreIndex.text = _maxScore.ToString();
     }
 
     private void Update()
@@ -47,7 +47,7 @@ public class ScoreCounter : MonoBehaviour
         if (_score >= _maxScore)
         {
             _maxScore = _score;
-            _maxScoreText.text = "Рекорд: " + _maxScore.ToString();
+            _maxScoreIndex.text = _maxScore.ToString();
         }
 
         _timer = 0;
